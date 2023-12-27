@@ -1,0 +1,36 @@
+{%extends 'base.html'%}
+{%block body_block%}
+
+<div class="container mt-5 ">
+    <h3>Available Books</h3>
+    <table class=" container table table-dark mt-3">
+    <tr>
+        <td>Name of the book</td>
+        <td>Author</td>
+        <td>Price</td>
+        <td>Publications</td>
+        <td>View</td>
+        
+    </tr>
+    {%for book in data%}
+    <tr>
+        <td>{{book.name}}</td>
+        <td>{{book.price}}</td>
+        <td>{{book.author}}</td>
+        <td>{{book.publisher}}</td>
+        <td>
+            <a href="{%url 'book-id' book.id %}"><button>View</button></a>
+
+            <a href="{%url 'book-update' book.id %}"><button>Update</button></a>
+
+            <a href="{%url 'book-remove' book.id %}"><button>Delete</button></a>
+            
+            
+        </td>
+
+    </tr>
+    {%endfor%}
+    
+</table>
+</div>
+{%endblock%}

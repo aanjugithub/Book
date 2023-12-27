@@ -1,0 +1,15 @@
+{%extends 'base.html'%}
+{%block body_block%}
+
+<div class="container mt-5 d-flex justify-content-center">
+    
+    <form class="border shadoe p-5 w-50" action="" method="post" enctype="multipart/form-data">
+        <h4>Create new data</h4>
+        {%csrf_token%}
+        {{form.as_p}}
+        <button type="submit">Submit</button>
+
+    </form>
+</div>
+
+{%endblock%}

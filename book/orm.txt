@@ -1,0 +1,39 @@
+
+from book.models import Books
+
+
+Books.objects.create(name="Wings of fire",price=240,author="APJ Abdul kalam",publisher="Universities Press")
+
+Books.objects.create(name="Pride and prejudice",price=340,author="Jane Austen",publisher="Dover Publications")
+
+Books.objects.create(name="The white tiger",price=220,author="Aravind Adiga",publisher="Sigma Publications")
+
+Books.objects.create(name="The goat days",price=260,author="Bennyamin",publisher="DC Publications")
+
+
+------------------------
+
+get all objects: qs=Books.objects.all()
+-----------------------------------------
+create one more row
+qs=Books.objects.create(name="Nalukettu",price=115,author="MT Vasudevan nair",publisher="TG Publications")
+
+--------------------------------------
+delete an info
+
+qs=Books.objects.filter(author="Bennyamin").delete()
+
+------------------------
+update an information
+
+qs=Books.objects.filter(id=2).update(price=410)
+
+--------------------------------------------------
+sort on decending
+
+qs=Books.objects.all().order_by("-id")
+
+
+
+
+
